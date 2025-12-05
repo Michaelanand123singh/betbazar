@@ -13,9 +13,11 @@
         <div class="container">
             <div class="logo">
                 <img src="assets/logo.png" alt="betbazar Logo" class="logo-img">
-            
             </div>
-            <nav class="nav">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav" id="mainNav">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#sports" class="nav-link">Sports</a>
                 <a href="#betting" class="nav-link">Betting IDs</a>
@@ -527,6 +529,34 @@
     </button>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (mobileMenuToggle && mainNav) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                mobileMenuToggle.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = mainNav.querySelectorAll('.nav-link, .whatsapp-btn');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mainNav.classList.remove('active');
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        }
+        
         // Copy text function
         function copyText(text) {
             navigator.clipboard.writeText(text);
