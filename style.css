@@ -84,6 +84,17 @@ img {
     color: var(--primary-color);
 }
 
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
 .logo-img {
     height: 50px;
     width: auto;
