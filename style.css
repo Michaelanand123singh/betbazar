@@ -28,6 +28,26 @@ body {
     color: var(--text-white);
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Better touch targets for mobile */
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: rgba(0, 255, 136, 0.2);
+    touch-action: manipulation;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
@@ -1517,11 +1537,28 @@ body {
     }
     
     .hero-subtitle {
-        font-size: 36px;
+        font-size: 34px;
+        line-height: 1.3;
     }
     
     .hero-description {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .btn {
+        padding: 14px 30px;
+        font-size: 15px;
+        min-height: 48px;
+    }
+    
+    .trust-badges {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .trust-badge {
+        padding: 25px 20px;
     }
     
     .features-grid {
@@ -1529,14 +1566,36 @@ body {
         gap: 25px;
     }
     
+    .feature-card {
+        padding: 30px 25px;
+    }
+    
     .sports-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
     }
     
+    .sport-card {
+        height: 260px;
+    }
+    
     .betting-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        gap: 18px;
+    }
+    
+    .betting-card {
+        padding: 25px 18px;
+    }
+    
+    .payment-logos {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .payment-logo {
+        padding: 25px 20px;
+        min-height: 140px;
     }
     
     .offers-grid {
@@ -1600,11 +1659,13 @@ body {
     }
     
     .section-title {
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 1.3;
     }
     
     .section-subtitle {
         font-size: 16px;
+        line-height: 1.6;
     }
     
     .why-choose,
@@ -1614,43 +1675,67 @@ body {
     .how-it-works,
     .transaction-section,
     .offers-section,
-    .demo-section,
-    .responsible-section,
-    .quick-links {
-        padding: 60px 0;
+    .demo-section {
+        padding: 55px 0;
+    }
+    
+    .trust-section {
+        padding: 45px 0;
     }
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
     .header {
-        padding: 15px 0;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
     }
     
     .header .container {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        flex: 1;
+    }
+    
+    .logo-img {
+        height: 40px;
     }
     
     .mobile-menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
     }
     
     .nav {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 60px;
         left: 0;
         right: 0;
         background: var(--darker-bg);
         flex-direction: column;
         padding: 20px;
-        gap: 15px;
+        gap: 0;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         border-top: 2px solid rgba(0, 255, 136, 0.2);
         display: none;
         z-index: 999;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
     }
     
     .nav.active {
@@ -1659,9 +1744,13 @@ body {
     
     .nav-link {
         width: 100%;
-        text-align: center;
-        padding: 12px 0;
+        text-align: left;
+        padding: 15px 20px;
         border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        font-size: 16px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
     }
     
     .nav-link:last-of-type {
@@ -1672,51 +1761,97 @@ body {
         width: 100%;
         justify-content: center;
         margin-top: 10px;
-    }
-    
-    .container {
-        padding: 0 20px;
+        padding: 14px 25px;
+        min-height: 48px;
     }
     
     .hero {
-        padding: 60px 0;
-        min-height: 500px;
+        padding: 50px 0;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        gap: 30px;
     }
     
     .hero-slide {
         animation-duration: 15s;
     }
     
+    .hero-title {
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+    
     .hero-subtitle {
-        font-size: 28px;
+        font-size: 26px;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
     
     .hero-description {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 25px;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        width: 100%;
     }
     
     .btn {
         width: 100%;
         justify-content: center;
+        padding: 14px 25px;
+        font-size: 15px;
+        min-height: 48px;
     }
     
     .hero-features {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
+    }
+    
+    .hero-feature {
+        flex: 1 1 auto;
+        min-width: 120px;
+        font-size: 13px;
+    }
+    
+    .hero-image {
+        margin-top: 20px;
+    }
+    
+    .trust-section {
+        padding: 40px 0;
     }
     
     .trust-badges {
         grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+        gap: 20px;
+    }
+    
+    .trust-badge {
+        padding: 20px 15px;
+    }
+    
+    .trust-badge i {
+        font-size: 36px;
+        margin-bottom: 12px;
     }
     
     .trust-badge h3 {
-        font-size: 30px;
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    
+    .trust-badge p {
+        font-size: 13px;
     }
     
     .features-grid {
@@ -1725,7 +1860,24 @@ body {
     }
     
     .feature-card {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .feature-card h3 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+    
+    .feature-card p {
+        font-size: 14px;
+        line-height: 1.7;
     }
     
     .sports-grid {
@@ -1734,19 +1886,33 @@ body {
     }
     
     .sport-card {
-        height: 250px;
+        height: 240px;
+        border-radius: 12px;
     }
     
     .sport-overlay {
         padding: 20px;
+        border-radius: 12px;
     }
     
     .sport-overlay h3 {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 8px;
     }
     
     .sport-overlay p {
         font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .sport-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+    
+    .all-sports {
+        margin-top: 30px;
     }
     
     .betting-grid {
@@ -1756,35 +1922,82 @@ body {
     
     .betting-card {
         padding: 25px 15px;
+        border-radius: 12px;
+    }
+    
+    .betting-logo {
+        font-size: 16px;
+        min-height: 40px;
+        margin-bottom: 12px;
+    }
+    
+    .betting-btn {
+        padding: 10px 20px;
+        font-size: 13px;
+        min-height: 44px;
     }
     
     .view-all-btn {
-        padding: 13px 35px;
+        padding: 14px 35px;
         font-size: 15px;
+        min-height: 48px;
+    }
+    
+    .view-all-container {
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     
     .payment-logos {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 15px;
     }
     
     .payment-logo {
         padding: 25px 15px;
         min-height: 130px;
+        border-radius: 12px;
+    }
+    
+    .payment-logo img {
+        max-height: 55px;
     }
     
     .transaction-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
     
     .transaction-card {
-        padding: 40px 30px;
+        padding: 35px 25px;
+        border-radius: 15px;
+    }
+    
+    .transaction-card > i {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+    
+    .transaction-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .transaction-card > p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+    
+    .transaction-btn {
+        padding: 14px 35px;
+        font-size: 15px;
+        min-height: 48px;
     }
     
     .offers-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
     }
     
     .offer-card.featured {
@@ -1792,26 +2005,80 @@ body {
     }
     
     .offer-card {
-        padding: 35px 25px;
+        padding: 30px 20px;
+        border-radius: 15px;
     }
     
-    .responsible-grid {
-        grid-template-columns: 1fr;
+    .offer-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .offer-amount {
+        font-size: 56px;
+        margin-bottom: 15px;
+    }
+    
+    .offer-card > p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .offer-btn {
+        padding: 14px 35px;
+        font-size: 15px;
+        min-height: 48px;
+    }
+    
+    .demo-card {
+        padding: 30px 20px;
+        border-radius: 15px;
         gap: 25px;
     }
     
-    .responsible-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 20px;
+    .demo-content h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
     }
     
-    .responsible-banner img {
-        width: 100px;
+    .credential {
+        margin-bottom: 18px;
+    }
+    
+    .credential label {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .credential input {
+        padding: 12px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+    
+    .credential button {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 44px;
+        border-radius: 8px;
+    }
+    
+    .demo-btn {
+        padding: 14px 35px;
+        font-size: 15px;
+        min-height: 48px;
     }
     
     .links-grid {
         grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .footer {
+        padding: 40px 0 25px;
+    }
+    
+    .footer-content {
         gap: 30px;
     }
     
@@ -1819,14 +2086,28 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 15px;
+        padding-top: 25px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .footer-links a {
+        font-size: 13px;
     }
     
     .section-title {
-        font-size: 32px;
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 12px;
     }
     
     .section-subtitle {
         font-size: 15px;
+        margin-bottom: 35px;
+        line-height: 1.6;
     }
     
     .why-choose,
@@ -1836,10 +2117,12 @@ body {
     .how-it-works,
     .transaction-section,
     .offers-section,
-    .demo-section,
-    .responsible-section,
-    .quick-links {
-        padding: 50px 0;
+    .demo-section {
+        padding: 45px 0;
+    }
+    
+    .trust-section {
+        padding: 35px 0;
     }
     
     .floating-whatsapp {
@@ -1884,126 +2167,213 @@ body {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 15px;
+        padding: 0 16px;
     }
     
     .header {
-        padding: 12px 0;
-    }
-    
-    .logo {
-        font-size: 20px;
+        padding: 10px 0;
     }
     
     .logo-img {
-        height: 35px;
+        height: 36px;
     }
     
     .mobile-menu-toggle {
-        padding: 8px 12px;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        min-height: 42px;
         font-size: 20px;
     }
     
+    .nav {
+        top: 56px;
+        padding: 15px;
+        max-height: calc(100vh - 56px);
+    }
+    
+    .nav-link {
+        padding: 14px 16px;
+        font-size: 15px;
+        min-height: 46px;
+    }
+    
+    .whatsapp-btn {
+        padding: 13px 20px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+    
     .footer-logo-img {
-        height: 45px;
+        height: 40px;
     }
     
     .hero {
-        padding: 40px 0;
-        min-height: 450px;
+        padding: 35px 0;
+        min-height: auto;
+    }
+    
+    .hero-content {
+        gap: 25px;
     }
     
     .hero-title {
-        font-size: 18px;
+        font-size: 14px;
         letter-spacing: 2px;
+        margin-bottom: 6px;
     }
     
     .hero-subtitle {
-        font-size: 22px;
-        line-height: 1.3;
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 12px;
     }
     
     .hero-description {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 13px 20px;
         font-size: 14px;
+        min-height: 46px;
+    }
+    
+    .hero-features {
+        gap: 12px;
+    }
+    
+    .hero-feature {
+        font-size: 12px;
+        padding: 8px 12px;
     }
     
     .hero-image img {
-        border-radius: 15px;
+        border-radius: 12px;
     }
     
     .floating-card {
-        padding: 10px 15px;
-        font-size: 12px;
+        padding: 8px 12px;
+        font-size: 11px;
     }
     
     .section-title {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.3;
+        margin-bottom: 10px;
     }
     
     .section-subtitle {
-        font-size: 14px;
+        font-size: 13px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    
+    .trust-section {
+        padding: 30px 0;
     }
     
     .trust-badges {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 18px;
+    }
+    
+    .trust-badge {
+        padding: 18px 15px;
     }
     
     .trust-badge i {
-        font-size: 40px;
+        font-size: 36px;
+        margin-bottom: 10px;
     }
     
     .trust-badge h3 {
-        font-size: 28px;
+        font-size: 24px;
+        margin-bottom: 6px;
     }
     
     .trust-badge p {
-        font-size: 13px;
+        font-size: 12px;
+    }
+    
+    .why-choose,
+    .sports-section,
+    .betting-ids,
+    .payment-section,
+    .how-it-works,
+    .transaction-section,
+    .offers-section,
+    .demo-section {
+        padding: 40px 0;
+    }
+    
+    .features-grid {
+        gap: 18px;
     }
     
     .feature-card {
-        padding: 25px 20px;
+        padding: 25px 18px;
+        border-radius: 10px;
     }
     
     .feature-icon {
-        width: 70px;
-        height: 70px;
+        width: 65px;
+        height: 65px;
+        margin-bottom: 18px;
     }
     
     .feature-icon i {
-        font-size: 30px;
+        font-size: 28px;
     }
     
     .feature-card h3 {
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
     
     .feature-card p {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+    
+    .sports-grid {
+        gap: 18px;
     }
     
     .sport-card {
-        height: 200px;
+        height: 220px;
+        border-radius: 10px;
     }
     
     .sport-overlay {
-        padding: 15px;
+        padding: 18px;
+        border-radius: 10px;
     }
     
     .sport-overlay h3 {
         font-size: 20px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
     
     .sport-overlay p {
-        font-size: 12px;
+        font-size: 13px;
         margin-bottom: 12px;
     }
     
     .sport-btn {
-        padding: 10px 20px;
+        padding: 11px 22px;
         font-size: 13px;
+        min-height: 42px;
+    }
+    
+    .all-sports {
+        margin-top: 25px;
     }
     
     .all-sports img {
@@ -2016,36 +2386,41 @@ body {
     }
     
     .betting-card {
-        padding: 20px 15px;
+        padding: 22px 15px;
+        border-radius: 10px;
     }
     
     .betting-logo {
-        font-size: 16px;
-        min-height: 35px;
+        font-size: 15px;
+        min-height: 38px;
+        margin-bottom: 10px;
     }
     
     .betting-btn {
-        padding: 8px 18px;
-        font-size: 13px;
+        padding: 10px 18px;
+        font-size: 12px;
+        min-height: 42px;
     }
     
     .view-all-btn {
-        padding: 12px 30px;
+        padding: 13px 28px;
         font-size: 14px;
+        min-height: 46px;
     }
     
     .view-all-container {
         margin-top: 25px;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
     
     .ids-list {
-        gap: 10px;
+        gap: 8px;
+        flex-wrap: wrap;
     }
     
     .ids-list span {
-        padding: 8px 15px;
-        font-size: 12px;
+        padding: 7px 14px;
+        font-size: 11px;
     }
     
     .payment-logos {
@@ -2054,33 +2429,179 @@ body {
     }
     
     .payment-logo {
-        padding: 20px 15px;
-        min-height: 120px;
+        padding: 22px 15px;
+        min-height: 115px;
+        border-radius: 10px;
     }
     
     .payment-logo img {
-        max-height: 50px;
+        max-height: 48px;
     }
     
     .razorpay-section {
-        padding: 30px 20px;
+        padding: 28px 18px;
+        border-radius: 12px;
     }
     
     .razorpay-section img {
-        max-width: 250px;
+        max-width: 220px;
     }
     
-    .step-number {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
-        position: relative;
-        z-index: 2;
+    .steps-container {
+        gap: 25px;
+        padding: 0 15px;
     }
     
     .steps-container::before {
         top: 30px;
         height: calc(100% - 60px);
+        width: 2px;
+    }
+    
+    .step {
+        max-width: 100%;
+    }
+    
+    .step-number {
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .step-content h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .step-content p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+    
+    .transaction-grid {
+        gap: 20px;
+    }
+    
+    .transaction-card {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+    
+    .transaction-card > i {
+        font-size: 50px;
+        margin-bottom: 18px;
+    }
+    
+    .transaction-card h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+    
+    .transaction-card > p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .transaction-btn {
+        padding: 13px 28px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+    
+    .offers-grid {
+        gap: 18px;
+    }
+    
+    .offer-card {
+        padding: 28px 18px;
+        border-radius: 12px;
+    }
+    
+    .offer-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    
+    .offer-amount {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+    
+    .offer-card > p {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+    
+    .offer-btn {
+        padding: 13px 28px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+    
+    .demo-card {
+        padding: 28px 18px;
+        border-radius: 12px;
+        gap: 22px;
+    }
+    
+    .demo-content h3 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+    
+    .credential {
+        margin-bottom: 16px;
+    }
+    
+    .credential label {
+        font-size: 13px;
+        margin-bottom: 7px;
+    }
+    
+    .credential input {
+        padding: 11px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+    
+    .credential button {
+        padding: 11px 18px;
+        font-size: 13px;
+        min-height: 42px;
+        border-radius: 8px;
+    }
+    
+    .demo-btn {
+        padding: 13px 28px;
+        font-size: 14px;
+        min-height: 46px;
+    }
+    
+    .links-grid {
+        gap: 22px;
+    }
+    
+    .footer {
+        padding: 35px 0 20px;
+    }
+    
+    .footer-content {
+        gap: 25px;
+    }
+    
+    .footer-bottom {
+        padding-top: 20px;
+        gap: 12px;
+    }
+    
+    .footer-links {
+        gap: 8px;
+    }
+    
+    .footer-links a {
+        font-size: 12px;
     }
     
     .step-content {
@@ -2282,9 +2803,7 @@ body {
 /* ================================
    SMOOTH SCROLLING
    ================================ */
-html {
-    scroll-behavior: smooth;
-}
+/* Smooth scrolling is defined in the base styles above with reduced motion support */
 
 /* ================================
    SELECTION STYLES
