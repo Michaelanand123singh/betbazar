@@ -478,7 +478,47 @@ img {
     text-align: center;
     color: var(--text-gray);
     font-size: 18px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 20px auto 30px;
+    max-width: 900px;
+}
+
+.platform-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.platform-intro h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.platform-intro h3 i {
+    font-size: 28px;
+}
+
+.platform-intro p {
+    color: var(--text-gray);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* ================================
@@ -1677,6 +1717,28 @@ img {
     .section-subtitle {
         font-size: 16px;
         line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .section-description {
+        font-size: 15px;
+        margin: 18px auto 28px;
+    }
+    
+    .platform-intro {
+        margin-bottom: 35px;
+    }
+    
+    .platform-intro h3 {
+        font-size: 22px;
+    }
+    
+    .platform-intro h3 i {
+        font-size: 26px;
+    }
+    
+    .platform-intro p {
+        font-size: 15px;
     }
     
     .why-choose,
@@ -2117,8 +2179,32 @@ img {
     
     .section-subtitle {
         font-size: 15px;
-        margin-bottom: 35px;
+        margin-bottom: 20px;
         line-height: 1.6;
+    }
+    
+    .section-description {
+        font-size: 14px;
+        margin: 15px auto 25px;
+    }
+    
+    .platform-intro {
+        margin-bottom: 30px;
+    }
+    
+    .platform-intro h3 {
+        font-size: 20px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .platform-intro h3 i {
+        font-size: 24px;
+    }
+    
+    .platform-intro p {
+        font-size: 14px;
+        padding: 0 10px;
     }
     
     .why-choose,
@@ -2282,8 +2368,32 @@ img {
     
     .section-subtitle {
         font-size: 13px;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         line-height: 1.6;
+    }
+    
+    .section-description {
+        font-size: 12px;
+        margin: 12px auto 20px;
+    }
+    
+    .platform-intro {
+        margin-bottom: 25px;
+    }
+    
+    .platform-intro h3 {
+        font-size: 18px;
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .platform-intro h3 i {
+        font-size: 20px;
+    }
+    
+    .platform-intro p {
+        font-size: 12px;
+        padding: 0 10px;
     }
     
     .trust-section {
