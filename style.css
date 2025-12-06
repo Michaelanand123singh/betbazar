@@ -648,6 +648,55 @@ body {
     box-shadow: 0 8px 30px rgba(0, 255, 136, 0.3);
 }
 
+.betting-card-hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.betting-card-hidden.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInUp 0.5s ease;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.view-all-btn {
+    background: var(--gradient-green);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+
+.view-all-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+}
+
+.view-all-btn i {
+    transition: transform 0.3s;
+}
+
+.view-all-btn.active i {
+    transform: rotate(180deg);
+}
+
 .betting-logo {
     font-size: 18px;
     font-weight: bold;
@@ -1709,6 +1758,11 @@ body {
         padding: 25px 15px;
     }
     
+    .view-all-btn {
+        padding: 13px 35px;
+        font-size: 15px;
+    }
+    
     .payment-logos {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -1973,6 +2027,16 @@ body {
     .betting-btn {
         padding: 8px 18px;
         font-size: 13px;
+    }
+    
+    .view-all-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+    
+    .view-all-container {
+        margin-top: 25px;
+        margin-bottom: 30px;
     }
     
     .ids-list {
