@@ -826,6 +826,9 @@ body {
     text-align: center;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .step-number {
@@ -1510,30 +1513,41 @@ body {
     
     .steps-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
+        align-items: center;
+        position: relative;
+        padding: 0 20px;
     }
     
     .steps-container::before {
-        display: none;
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: calc(100% - 80px);
+        background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        z-index: 0;
     }
     
     .step {
         position: relative;
+        width: 100%;
+        max-width: 400px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .step::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 40px;
-        background: var(--primary-color);
+        display: none;
     }
     
-    .step:last-child::before {
-        display: none;
+    .step-number {
+        position: relative;
+        z-index: 2;
     }
     
     .section-title {
@@ -1794,14 +1808,23 @@ body {
         width: 70px;
         height: 70px;
         font-size: 28px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .step-content {
+        width: 100%;
+        text-align: center;
     }
     
     .step-content h3 {
         font-size: 18px;
+        margin-top: 15px;
     }
     
     .step-content p {
         font-size: 13px;
+        margin-top: 8px;
     }
 }
 
@@ -1987,14 +2010,33 @@ body {
         width: 60px;
         height: 60px;
         font-size: 24px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .steps-container::before {
+        top: 30px;
+        height: calc(100% - 60px);
+    }
+    
+    .step-content {
+        width: 100%;
+        text-align: center;
     }
     
     .step-content h3 {
         font-size: 17px;
+        margin-top: 12px;
     }
     
     .step-content p {
         font-size: 12px;
+        margin-top: 6px;
+    }
+    
+    .steps-container {
+        gap: 25px;
+        padding: 0 15px;
     }
     
     .transaction-card {
