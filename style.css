@@ -2097,9 +2097,17 @@ img {
         border-radius: 15px;
     }
     
+    .offer-badge {
+        top: 15px;
+        right: 15px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+    
     .offer-card h3 {
         font-size: 20px;
         margin-bottom: 15px;
+        padding-top: 30px;
     }
     
     .offer-amount {
@@ -2649,9 +2657,17 @@ img {
         border-radius: 12px;
     }
     
+    .offer-badge {
+        top: 12px;
+        right: 12px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
     .offer-card h3 {
         font-size: 18px;
         margin-bottom: 12px;
+        padding-top: 28px;
     }
     
     .offer-amount {
@@ -2759,8 +2775,16 @@ img {
         padding: 30px 20px;
     }
     
+    .offer-badge {
+        top: 12px;
+        right: 12px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    
     .offer-card h3 {
         font-size: 20px;
+        padding-top: 28px;
     }
     
     .offer-amount {
